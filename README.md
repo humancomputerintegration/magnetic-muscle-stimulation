@@ -4,7 +4,21 @@ This is the repository for software instances (Python script) used for the "Inte
 
 For more information, please refer to our paper: https://lab.plopes.org/#MMS
 
-## notes:
+# how to use
+The code sets up an OSC server that sends serial messages to the magnetic stimulator in response to OSC messages from any OSC clients held in other program instances such as Unity, Python, Processing, etc.
+
+For controlling the serial messages to the stimulator, our program uses MagPy Python Toolbox (https://github.com/nicolasmcnair/magpy), so please install this prior to run our Python script.
+
+reference: Nicolas A McNair. 2017. MagPy: A Python toolbox for controlling Magstim transcranial magnetic stimulators. Journal of neuroscience methods 276 (2017).
+
+For hardware connection between your laptop and the stimulator, you need to have a usb-to-DB-26M cable; please refer to this page for more details https://github.com/nicolasmcnair/magpy/wiki/The-Serial-Cable
+
+Once you have MagPy and the hardware connection established, now you need to configure: 
+(1) the serial port of your laptop connected to the stimulator (line67)
+(2) the 4-8-2-digit unlock code that comes with your Magstim stimulator (line67)
+(3) ip address and OSC port names (line9-13) on our script and your script that communicates with our script.
+
+## notes
 Currently, our software pipeine is only compatible with a medical-grade magnetic stimulator (Magstim Super Rapid^2). We hope to release an open-source custom magnetic stimulator someday in the future; so please stay tuned!
 
 # citing
